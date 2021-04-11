@@ -36,6 +36,10 @@
   text-orientation: mixed; */
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: var(--gray30);
   /* font-family: charter; */
@@ -50,20 +54,53 @@ a {
 header {
   font-size: 14px;
   color: var(--gray10);
+  /* background: red; */
+  position: absolute;
+  width: 188px;
+  top: 64px;
+  left: -232px;
+  /* Posicion relative*/
+  /* position: relative;
+  border: 1px solid red;
+  top left bottom right z-index:
+  top: 200px; */
+  /*Posicion absoluta --para ubicarlo debe esta referente a un posición relative */
+  /* position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; */
+  /* Posición firex */
+  /* position: fixed;
+  left: 0; */
+  /* Posición sticky */
+  /* position: sticky;
+  top: 0; */
+}
+
+header a {
+  color: var(--gray10);
+  text-decoration: none;
 }
 
 header a:hover {
-  color: var(--gray10);
+  color: var(--gray30);
 }
 
 nav details summary {
   font-weight: bold;
+  line-height: 24px;
+}
+
+header li {
+  margin-bottom: 16px;
 }
 
 h1 {
   font-size: 60px;
   margin-top: 64px;
   margin-bottom: 16px;
+  font-weight: normal;
 }
 
 /* Selector hermano directo */
@@ -86,10 +123,14 @@ h3 {
   margin-top: 16px;
   margin-bottom: 24px;
   font-weight: normal;
+  position: relative;
   /* width: 200px;
   padding: 20px;
   border: 1px solid red;
   box-sizing: border-box; */
+  /* position: sticky;
+  top: 0;
+  background: white; */
 }
 
 pre {
@@ -117,8 +158,16 @@ blockquote span::before {
   content: '-';
 }
 
+.header {
+  position: sticky;
+  top: 0;
+}
+
+.header-content {
+  position: relative;
+}
 .main {
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .wrapper {
@@ -177,7 +226,7 @@ blockquote span::before {
 }
 .section-content h3 {
   counter-increment: titleList;
-  padding-bottom: 4px;
+  padding-bottom: 8px;
 }
 
 .section-content h3::before {
@@ -186,10 +235,13 @@ blockquote span::before {
 
 .section-content h3::after {
   content: '';
-  width: 32px;
+  width: 80px;
   height: 4px;
   background: var(--gray30);
   display: inline-block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
 
 /* ::selection {
