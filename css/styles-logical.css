@@ -104,6 +104,13 @@ pre {
   padding: 40px;
   overflow: auto;
   border-radius: 8px;
+  border: 10px solid red;
+  border-inline-start: 5px solid white ;
+  border-block-end: 20px solid pink;
+  border-inline-end: 5px solid green;
+  border: 10px solid #5551FF;
+  box-shadow: -10px 10px 0 0 #ABAAF6;
+  border-radius: 50px;
 }
 
 p {
