@@ -176,6 +176,7 @@ blockquote span::before {
 .header {
   /* position: sticky;
   top: 0; */
+  padding-inline: 16px;
 }
 
 .header-project {

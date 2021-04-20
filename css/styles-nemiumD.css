@@ -1,46 +1,18 @@
-@font-face {
-  font-family: charter;
-  src: url('../fonts/charter-regular.otf');
-  font-style: normal;
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: charter;
-  src: url('../fonts/charter-italic.otf');
-  font-style: italic;
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: charter;
-  src: url('../fonts/charter-bold.otf');
-  font-style: normal;
-  font-weight: bold;
-}
-
-@font-face {
-  font-family: charter;
-  src: url('../fonts/charter-bold-italic.otf');
-  font-style: italic;
-  font-weight: bold;
-}
-
 :root {
   font-size: 18px;
-  --white30: white;
-  --white20: #A5A3a5;
-  --white10: #3A3539;
+  --gray30: #545454;
+  --gray20: #212429;
+  --gray10: #616161;
   /* direction: rtl;
   writing-mode: horizontal-tb;
   text-orientation: mixed; */
 }
 
 body {
-  color: var(--white30);
+  color: var(--gray30);
   /* font-family: charter; */
-  font-family: 'Nunito', sans-serif;
-  background: #251F24;
+  font-family: 'Rubik', sans-serif;
+  /* background: #251F24; */
   margin: 0;
   /* margin-inline: 100px; */
   /* margin-block: 100px; */
@@ -49,7 +21,7 @@ body {
 }
 
 a {
-  color: var(--white30);
+  color: var(--gray30);
 }
 
 .header {
@@ -68,7 +40,7 @@ a {
 header {
   margin-block-start: 20px;
   font-size: 14px;
-  color: var(--white30);
+  color: var(--gray30);
   /* position: absolute; */
   /* top */
   /* inset-block-start: 0; */
@@ -87,17 +59,17 @@ header ul {
 }
 
 header li {
-  color: var(--white20);
+  color: var(--gray20);
   margin-block-end: 16px;
 }
 
 header a {
-  color: var(--white20);
+  color: var(--gray20);
   text-decoration: none;
 }
 
 header a:hover {
-  color: var(--white30);
+  color: var(--gray30);
 }
 
 nav details summary {
@@ -105,7 +77,7 @@ nav details summary {
 }
 
 h1, h2, h3 {
-  /* font-weight: normal; */
+  color: black;
 }
 
 h1 {
@@ -136,8 +108,9 @@ hr {
   margin-block: 40px;
   border-color: rgba(97, 97, 97, 0.2);;
 }
+
+
 pre {
-  background: var(--white10);
   padding: 40px;
   overflow: auto;
   border-radius: 8px;
@@ -145,18 +118,19 @@ pre {
   border-inline-start: 5px solid white ;
   border-block-end: 20px solid pink;
   border-inline-end: 5px solid green;
+
+  border-radius: 50px; */
   border: 10px solid #5551FF;
   box-shadow: -10px 10px 0 0 #ABAAF6;
-  border-radius: 50px; */
+  text-align: justify;
 }
 
 p {
-  color: var(--white20);
+  color: var(--gray20);
 }
 
 .hero {
-  background-image: linear-gradient(96.07deg, #314755 30.63%, #26A0DA 102.18%);
-  /* background-image: linear-gradient(to top, rgba(255, 255, 255, .3), transparent), url('../images/patterm.png'); */
+  background: linear-gradient(274.51deg, rgba(74, 0, 224, 0.6) 5%, rgba(142, 45, 226, 0.5) 130.61%), url(./../images/patterm-NemiumD.png);
   /* background: url('../images/patterm.png'); */
   /* background-repeat: no-repeat; */
   /* background-position: center; */
@@ -170,10 +144,17 @@ p {
   display: block;
   max-inline-size: 100%;
   /* max-width: 100%; */
+  margin-inline: auto;
 }
 
 .section-content {
   counter-reset: titleList;
+  text-align: center;
+}
+
+.section-content:nth-last-child(-n+4) {
+  /* border: 1px solid red; */
+  text-align: justify;
 }
 .section-content h3 {
   counter-increment: titleList;
@@ -187,33 +168,44 @@ p {
   content: '';
   width: 32px;
   height: 4px;
-  background: var(--white30);
+  background: var(--gray30);
   display: inline-block;
 } */
 
 blockquote {
   margin-block-start: 80px;
   margin-block-end: 63px;
-  margin-inline-start: 0;
-  margin-inline-end : 0;
-  background-color: var(--white10);
-  border-radius: 8px;
+  margin-inline: auto;
   line-height: 24px;
   font-size: 24px;
   padding-inline-start: 24px;
   padding-inline-end: 24px;
   padding-block-start: 24px;
   padding-block-end: 24px;
+  display: inline-block;
+  border-left: 4px solid #5551FF;
 }
 
 blockquote p {
-  color: var(--white30);
+  /* color: var(--gray30); */
+  text-align: justify;
 }
 
 /* ::selection {
   background: green;
 } */
 
+.section-content  ul {
+  list-style: none
+}
+.section-content ul li::before {
+  content: "•  ";
+  color: #5551FF;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
 .main hr {
   display: none;
 }
@@ -273,27 +265,74 @@ blockquote p {
 }
 
 .form input {
-  width: 100%;
-  border: 1px solid var(--white30);
-  background: #251F24;
+  border: 1px solid #616161;
+  max-width: 248px;
   box-sizing: border-box;
-  border-radius: 8px;
+  border-radius: 90px;
   padding-inline: 16px;
   padding-block: 12px;
   color: var(--white30);
   font-size: 16px;
-  display: block;
+  display: inline-block;
   margin-block-end: 24px;
+  margin-inline-end: 16px;
+
 }
 
 .form input[type="submit"] {
-  background: #157EFB;
+  width: 119px;
+  background: #5551FF;
+  color: white;
   border: none;
   margin-block-end: 80px;
 }
 
 .form input::-webkit-input-placeholder {
-  color: var(--white20);
+  color: #424242;
+}
+
+.form input:focus{
+  outline: none;
+}
+
+.section-content.news {
+  margin-block-start: 40px;
+}
+
+.footer {
+  color: white;
+  background: black;
+  block-size: 174px;
+}
+
+.footer-content {
+  text-align: center;
+}
+
+.footer img {
+  /* border: 1px solid red; */
+  block-size: 18px;
+  inline-size: 18px;
+  margin-inline: 11px;
+}
+
+.footer p {
+  color: white;
+  display: block  ;
+  padding-block-start: 48px;
+  padding-block-end: 19px;
+  margin-block: 0;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 42px
+}
+
+.footer p::before {
+  content: '© ';
+}
+
+span {
+  color: #8E2DE2;
 }
 
 @media screen and (min-width: 1366px) {
@@ -325,42 +364,13 @@ blockquote p {
   header {
     position: absolute;
     inset-block-start: 0;
-    inset-inline-start: -200px;
+    inset-inline-end: -200px;
     inline-size: 188px;
   }
 
   h1 {
     font-size: 60px;
     margin-block-start: 64px;
+    text-align: center;
   }
-}
-
-.footer {
-  background: var(--white30);
-  block-size: 174px;
-}
-
-.footer-content {
-  text-align: center;
-}
-
-.footer img {
-  /* border: 1px solid red; */
-  block-size: 18px;
-  inline-size: 18px;
-  margin-inline: 11px;
-}
-
-.footer p {
-  display: block  ;
-  padding-block-start: 48px;
-  padding-block-end: 19px;
-  margin-block: 0;
-  font-weight: normal;
-  font-size: 34px;
-  line-height: 42px
-}
-
-.footer p::before {
-  content: '© ';
 }
